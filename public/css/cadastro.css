@@ -4,21 +4,18 @@
 }
 
 body{
-    background-image: url(../img/fundo.avif);
-    background-repeat: no-repeat;
-    background-size:cover;
+    background-image: url(../img/library.jpg);
+
     background-position: center;
-   
-    display: grid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
 .container {
-    display: grid;
-   
-    position: relative;
-    right: 7px;
-    left: 7px;
-    top: 30px;
+    display: flex;
+    gap: 5rem;
     border-radius: 13px;
 }
 
@@ -31,7 +28,7 @@ body{
 
 .livro{
     position: absolute;
-    left: 43px;
+    left: 33px;
     top: 160px;
 }
 
@@ -62,7 +59,7 @@ h1{
 h2{
    position: absolute;
    top: 180px;
-   left: 162px;
+   left: 202px;
    text-shadow: 
     -1px -1px 0px #27312B, 
     -1px 1px 0px #27312B,                    
@@ -72,7 +69,7 @@ h2{
 
 .form{
     position: relative;
-    left: 680px;
+    left: 620px;
     top: -530px;
     color: #fff;
     font-size: 13px;
@@ -85,8 +82,7 @@ h2{
 
 button{
     position: absolute;
-    left: 163px;
-    
+    left: 113px;
     height: 40px; width:150px;
     font-size: 400px;
 }
@@ -98,5 +94,5 @@ button id{
 
 input{
     border-radius: 9px;
-    height: 20px;
+    height: 26px;
 }
