@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <title>Biblioteca</title>
+    <link rel="stylesheet" href="../css/perfil.css">
+    <link rel="stylesheet" href="../css/search.css">
+</head>
+
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #FFCD29;">
+    <div class="container-fluid">
+      <div class="collapse navbar-collapse" id="navbarScroll" style="background-color: #FFCD29;  color: aliceblue;">
+        <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="height: 50px; ">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/" style="color: aliceblue;">Home</a>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-link" href="#" style="color: aliceblue;">Doubts</a>
+          </li>
+          
+        </ul>
+        <form class="d-flex">
+          
+                <button id="search-btn" class="search__btn d-flex align-items-center pl-1" data-toggle="tooltip" title="Search" aria-label="search the book" style="border-radius:30px ; margin-right: 10px;">
+                    <i class="material-icons search__icon">Apagar</i>
+                </button>
+                <button id="search-btn" class="search__btn d-flex align-items-center pl-1" data-toggle="tooltip" title="Search" aria-label="search the book" style=" border-radius:30px ;">
+                  <i class="material-icons search__icon">Sair</i>
+              </button>
+            
+        </form>
+      </div>
+    </div>
+</nav>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-8" >
+          <img src="../img/User-Profile.png"> 
+      </div>
+    </div>
+    
+    <div class="link">
+      <li class="nav-item dropdown" id="s">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" style="color: rgb(255, 255, 255); font-size: 30px;" role="button" data-bs-toggle="dropdown" aria-expanded="false" >
+          Reports
+        </a>
+        
+        <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+          <li><hr class="dropdown-divider"></li>
+          <li><a class="dropdown-item" href="#">Sala TL14343S3434D - “odeio russos”</a></li>
+        </ul>
+      </li>
+
+      <li class="nav-item dropdown" id="c">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" style="color: rgb(255, 255, 255); font-size: 30px;" role="button" data-bs-toggle="dropdown" aria-expanded="false" >
+          Authenticate Books
+        </a>
+        <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+          <li><hr class="dropdown-divider"></li>
+          <li><a class="dropdown-item" href="#">U24354s</a></li>
+        </ul>
+      </li>
+
+      <li class="nav-item dropdown" id="m">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown"     style="color: rgb(255, 255, 255); font-size: 30px;" role="button"   data-bs-toggle="dropdown" aria-expanded="false" >
+          Doubts
+        </a>
+        <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+        </ul>
+      </li>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+
+</body>
+</html>

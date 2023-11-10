@@ -1,0 +1,39 @@
+body{
+    background: -moz-linear-gradient(110deg,  #27312B 30%,hsl(168, 22%, 5%) 70%);
+    background: linear-gradient(1deg,  #27312B 30%,#090E0D 70%);
+    background: -webkit-linear-gradient(11deg,  #27312B 30%,#090E0D 70%);
+    background: -o-linear-gradient(9deg,  #27312B 30%,#090E0D 70%);
+}
+
+.container{
+    background-color:#190a44ad;
+    display: grid;
+    position: relative;
+    right: 7px;
+    left: 7px;
+    top: 50px;
+    border-radius: 40px;
+    border: solid #2a0a44 ;
+    box-shadow: 10px 10px 100px black;
+}
+
+.form{
+    position: relative;
+    left: 360px;
+    top: 130px;
+    color: #fff;
+}
+
+button{
+    border-radius:60px ;
+    display: flex;
+   
+}
+
+#a{
+    display: flex;
+    color: white;
+    position: relative;
+    top: -33px;
+    left: 91px;
+}

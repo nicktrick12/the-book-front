@@ -1,0 +1,102 @@
+@font-face {
+    font-family: titulo;
+    src: url(../font/Mercy\ Christole.ttf);
+}
+
+body{
+    background-image: url(../img/fundo.avif);
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position: center;
+   
+    display: grid;
+}
+
+.container {
+    display: grid;
+   
+    position: relative;
+    right: 7px;
+    left: 7px;
+    top: 30px;
+    border-radius: 13px;
+}
+
+.nada{
+    position: relative;
+    left: -12px;
+    background-color: #f0daae15;
+    border-radius: 13px;
+}
+
+.livro{
+    position: absolute;
+    left: 43px;
+    top: 160px;
+}
+
+.logo{
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    position: relative;
+    left: 20px;
+    top: -600px;
+}
+
+h1{
+    font-family: titulo;
+    position: absolute;
+    top: 90px;
+    left: 106px;
+    font-size: 70px;
+    font-style: italic;
+    font-weight: 400;
+    text-shadow: 
+    -1px -1px 0px #27312B, 
+    -1px 1px 0px #27312B,                    
+    1px -1px 0px #27312B,                  
+    1px 0px 0px #27312B;
+}
+
+h2{
+   position: absolute;
+   top: 180px;
+   left: 162px;
+   text-shadow: 
+    -1px -1px 0px #27312B, 
+    -1px 1px 0px #27312B,                    
+    1px -1px 0px #27312B,                  
+    1px 0px 0px #27312B;
+}
+
+.form{
+    position: relative;
+    left: 680px;
+    top: -530px;
+    color: #fff;
+    font-size: 13px;
+    text-shadow: 
+    -1px -1px 0px #27312B, 
+    -1px 1px 0px #27312B,                    
+    1px -1px 0px #27312B,                  
+    1px 0px 0px #27312B;
+}
+
+button{
+    position: absolute;
+    left: 163px;
+    
+    height: 40px; width:150px;
+    font-size: 400px;
+}
+
+button id{
+    position: relative;
+    top: -11px;
+}
+
+input{
+    border-radius: 9px;
+    height: 20px;
+}

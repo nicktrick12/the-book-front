@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+@import url(/css/search.css);
+@import url(/css/cards.css);
+@import url(/css/loading.css);
+
+:root{
+    --primary-blue: #49afd0;
+    --primary-gray: #5e5e5e;
+    --primary-white: #fafafa;
+}
+
+body {
+    background-color: var(--primary-white);
+    font-family: "Poppins";
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.main {
+    translate: 0 150px; 
+}
+
+.main.active {
+    translate: 0 0;
+    transition: .5s;
+    transition-timing-function: ease-out;
+}
+
+.title {
+    color: var(--primary-gray);
+    font-weight: 600;
+}
+
+.title::first-letter {
+    color: var(--primary-blue);
+}
+
+.error {
+    display: none;
+}
+
+@media only screen and (max-device-width : 1024px) {
+
+    .main {
+        translate: 0 100px;    
+    }
+
+}
+
+@media only screen and (max-device-width : 480px) {
+
+    .title {
+        font-size: 3em;
+    }
+
+}
