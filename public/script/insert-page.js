@@ -1,6 +1,6 @@
 import { containerError, containerList } from "./components-page.js";
 import { createBook } from "./routes/book.js";
-import { getChatroom } from "./routes/chatroom.js";
+import { createChatroom,getChatroom } from "./routes/chatroom.js";
 import { createReading, favoriteReading } from "./routes/reading.js";
 
 export function insertOnPage({title, author, publisher, publishedDate, pagesNumber, categories, imageLink, previewLink}) {
@@ -72,17 +72,19 @@ export function insertOnPage({title, author, publisher, publishedDate, pagesNumb
             bookState: button.attr("bookState"),
             average: button.attr("average")
         };
-        console.log(JSON.stringify("here's the book data: " + bookData))
+        console.log(JSON.stringify("here's the book data: " + JSON.stringify(bookData)))
 
         createBook(bookData)
             .then((idBook) => {
                 console.log("book created has id: "+idBook)
-                createChatroom(idBook)
+                createChatroom(localStorage.getItem("idUser"), idBook)
                     .then((idChatroom) => {
+                        console.log("entrei nos metodos " + idChatroom)
                         getChatroom(idChatroom)
                             .then(chatroom => {
-                               
-                            })
+                                const url = 'http://localhost:10003/chat';
+                                window.location.href = `${url}?idChat=${chatroom.id}`;
+                        })
                     })
             })
             .catch((error) => {

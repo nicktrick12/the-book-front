@@ -1,6 +1,6 @@
 const url = "http://localhost:8080/api/v1/chatrooms"
 
-export function createChatroom(idBook) {
+export function createChatroom(idUser, idBook) {
     return new Promise((resolve, reject) => {
         fetch(`${url}/users/${idUser}/books/${idBook}/add`, {
             method: "POST",
@@ -10,7 +10,7 @@ export function createChatroom(idBook) {
         })
         .then((response) => {
             if (!response.ok) {
-                throw new Error(`HTTP error! Status: ${response.status}`);
+                throw new Error(`Erro ao criar! Status: ${response.status}`);
             }
             return response.json();
         })
@@ -27,7 +27,7 @@ export function createChatroom(idBook) {
 
 export function getChatroom(idChatroom) {
     return new Promise((resolve, reject) => {
-        fetch(`${url}/idChatroom/${idChatroom}`, {
+        fetch(`${url}/${idChatroom}`, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
@@ -35,7 +35,7 @@ export function getChatroom(idChatroom) {
         })
         .then((response) => {
             if (!response.ok) {
-                throw new Error(`HTTP error! Status: ${response.status}`);
+                throw new Error(`Erro ao achar! Status: ${response.status}`);
             }
             return response.json();
         })
