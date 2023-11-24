@@ -84,15 +84,28 @@ button{
     position: absolute;
     left: 113px;
     height: 40px; width:150px;
-    font-size: 400px;
+    background-image: url(../img/fundo.gif);
+    border-radius: 30px;
+    border: black;
+
 }
 
 button id{
     position: relative;
-    top: -11px;
+    top: -1px; 
+    font-size: 24px;
+    font-family: titulo;
 }
 
 input{
     border-radius: 9px;
     height: 26px;
 }
+
+button:hover{
+    border: white;
+    color: white;
+    text-shadow: white;
+    box-shadow: 0px 0px 5px white;
+}
+

@@ -1,5 +1,6 @@
 import { containerError, containerList } from "./components-page.js";
 import { createBook } from "./routes/book.js";
+import { getChatroom } from "./routes/chatroom.js";
 import { createReading, favoriteReading } from "./routes/reading.js";
 
 export function insertOnPage({title, author, publisher, publishedDate, pagesNumber, categories, imageLink, previewLink}) {
@@ -14,10 +15,13 @@ export function insertOnPage({title, author, publisher, publishedDate, pagesNumb
             <p class="card-text"><em class="card__text__title">Published:</em> ${publishedDate}</p>
             <p class="card-text"><em class="card__text__title">Pages:</em> ${pagesNumber}</p>
             <p class="card-text"><em class="card__text__title">Category:</em> ${categories}</p>
-            <a href="${previewLink}" class="btn link" aria-label="preview link in Google Books" tabindex="0">Sala</a>
+            <a href="${previewLink}" class="btn link" aria-label="preview link in Google Books" tabindex="0">Read</a>
+            <button class="btn create-chat-btn" title="${title}" pages="${pagesNumber}" gender="imagine" 
+            author="${author}" classification="1" summary="imagine" dataAdd="${publishedDate}" 
+            bookState="AUTENTICADO" average="5">Chat</button>
             <button class="btn create-book-btn" title="${title}" pages="${pagesNumber}" gender="imagine" 
             author="${author}" classification="1" summary="imagine" dataAdd="${publishedDate}" 
-            bookState="AUTENTICADO" average="5">Favoritar</button>
+            bookState="AUTENTICADO" average="5">Favorite</button>
         </div>
         `);
     containerList.append(cardBook);
@@ -48,6 +52,41 @@ export function insertOnPage({title, author, publisher, publishedDate, pagesNumb
             })
             .catch((error) => {
                 console.error("Error creating book:", error);
+            })
+    });
+
+    cardBook.find(".create-chat-btn").click(function () {
+
+
+
+        const button = $(this);
+        const bookData = {
+            title: button.attr("title"),
+            pages: button.attr("pages"),
+            gender: button.attr("gender"),
+            author: button.attr("author"),
+            classification: button.attr("classification"),
+            summary: button.attr("summary"),
+            dataAdd: button.attr("dataAdd"),
+            idUserAdd: localStorage.getItem("idUser"),
+            bookState: button.attr("bookState"),
+            average: button.attr("average")
+        };
+        console.log(JSON.stringify("here's the book data: " + bookData))
+
+        createBook(bookData)
+            .then((idBook) => {
+                console.log("book created has id: "+idBook)
+                createChatroom(idBook)
+                    .then((idChatroom) => {
+                        getChatroom(idChatroom)
+                            .then(chatroom => {
+                               
+                            })
+                    })
+            })
+            .catch((error) => {
+                console.error("Error creating Chatroom:", error);
             })
     });
 }
