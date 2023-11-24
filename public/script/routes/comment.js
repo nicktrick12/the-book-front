@@ -1,12 +1,19 @@
 const url = "http://localhost:8080/api/v1/comments"
 
-export function createComment(idChatroom, idUser) {
+function getChatroomIdFromUrl() {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get("idChat");
+}
+
+export function createComment(idUser, idChatroom, commentText) {
     return new Promise((resolve, reject) => {
+
         fetch(`${url}/users/${idUser}/chatrooms/${idChatroom}/add`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
             },
+            body: JSON.stringify(commentText),
         })
         .then((response) => {
             if (!response.ok) {
@@ -48,3 +55,24 @@ export function getComments(idUser, idChatroom) {
     })
 }
 
+document.addEventListener("DOMContentLoaded", function () {
+    const chatroomId = getChatroomIdFromUrl();
+
+    const submitCommentButton = document.querySelector(".send-button");
+    const commentInput = document.querySelector(".message-input");
+    const commentText = {
+        text: commentInput
+    };
+
+    submitCommentButton.addEventListener("click", function () {
+        const userId = localStorage.getItem("idUser");
+
+        createComment(userId, chatroomId, commentText)
+            .then((data) => {
+                console.log("Comment created successfully:", data);
+            })
+            .catch((error) => {
+                console.error("Error creating comment:", error);
+            });
+    });
+});
