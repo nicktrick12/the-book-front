@@ -61,7 +61,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const submitCommentButton = document.querySelector(".send-button");
     const commentInput = document.querySelector(".message-input");
     const commentText = {
-        text: commentInput
+        text: commentInput.value
     };
 
     submitCommentButton.addEventListener("click", function () {
