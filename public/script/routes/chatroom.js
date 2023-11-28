@@ -16,7 +16,6 @@ export function createChatroom(idUser, idBook) {
         })
         .then((data) => {
             resolve(data.id);
-
         })
         .catch((error) => {
             console.error("Error adding chatroom:", error);

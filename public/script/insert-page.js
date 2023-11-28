@@ -57,8 +57,6 @@ export function insertOnPage({title, author, publisher, publishedDate, pagesNumb
 
     cardBook.find(".create-chat-btn").click(function () {
 
-
-
         const button = $(this);
         const bookData = {
             title: button.attr("title"),

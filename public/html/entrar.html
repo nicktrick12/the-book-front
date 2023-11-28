@@ -14,14 +14,14 @@
 
     <div class="container" style="height: 500px; width:1000px;">
         <div class="form" style="height: 160px; width:400px;">
-            <form>
+            <form id="login-form">
                 <div class="mb-3">
-                    <label for="formGroupExampleInput" class="form-label" id="lbem" style="width:400px;"> E-mail</label>
-                    <input type="email" class="form-control" id="email" placeholder="E-mail">
+                    <label for="formGroupUsernameInput" class="form-label" style="width:400px;">Username</label>
+                    <input type="text" class="form-control" name="username" id="username" placeholder="Username">
                 </div>
                   <div class="mb-3">
-                    <label for="formGroupExampleInput" class="form-label" id="lbpa">Password</label>
-                    <input type="password" class="form-control" id="password" placeholder="Password">
+                    <label for="formGroupPasswordInput" class="form-label">Password</label>
+                    <input type="password" class="form-control" name="password" id="password" placeholder="Password">
                   </div>
                   <div class="col-12">
                     <a href="index.html">
@@ -35,6 +35,6 @@
         </div>
     </div>  
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script> 
-    <script src="../script/routes/login.js"></script>
+    <script type="module" src="../script/routes/login.js"></script>
 </body>
 </html>
