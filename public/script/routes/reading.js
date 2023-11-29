@@ -75,7 +75,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const listaFavoritos = document.querySelector(".nav-item.dropdown");
     const userId = localStorage.getItem("idUser");
     console.log(userId)
-    
+    //oi
     
     getFavorites(userId)
     .then((favorites) => {
