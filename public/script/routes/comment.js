@@ -31,9 +31,9 @@ export function createComment(idUser, idChatroom, commentText) {
     })
 }
 
-export function getComments(idUser, idChatroom) {
+export function getComments(idChatroom) {
     return new Promise((resolve, reject) => {
-        fetch(`${url}/users/${idUser}/chatrooms/${idChatroom}`, {
+        fetch(`${url}/chatrooms/${idChatroom}`, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
@@ -76,3 +76,35 @@ document.addEventListener("DOMContentLoaded", function () {
             });
     });
 });
+
+ let chatList = getComments(getChatroomIdFromUrl)
+chatList.then((comments) => {
+    const chat = document.getElementsByClassName("chat-container");
+
+    for (const comment of comments) {
+        const cardMessage = $('<li>');
+
+        cardMessage.html(`
+            <div class="msg">
+                <p>${comment.text}</p>
+            </div>
+        `);
+
+        chat.append(cardMessage);
+    }
+});
+
+
+const style = document.createElement('style');
+style.innerHTML = `
+    .msg {
+        background-color: white;
+        width: 800px;
+        word-wrap: break-word;
+        height: fit-content;
+        border-radius: 10px;
+        padding: 10px;
+    }
+`;
+
+document.head.appendChild(style);
