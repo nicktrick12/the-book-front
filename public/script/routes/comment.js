@@ -55,21 +55,23 @@ export function getComments(idUser, idChatroom) {
     })
 }
 
+
 document.addEventListener("DOMContentLoaded", function () {
     const chatroomId = getChatroomIdFromUrl();
 
     const submitCommentButton = document.querySelector(".send-button");
-    const commentInput = document.querySelector(".message-input");
-    const commentText = {
-        text: commentInput.value
-    };
 
     submitCommentButton.addEventListener("click", function () {
         const userId = localStorage.getItem("idUser");
+        const commentInput = document.querySelector(".message-input");
+        const commentText = {
+            text: commentInput.value
+        };
 
         createComment(userId, chatroomId, commentText)
             .then((data) => {
                 console.log("Comment created successfully:", data);
+            
             })
             .catch((error) => {
                 console.error("Error creating comment:", error);
