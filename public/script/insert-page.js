@@ -45,13 +45,13 @@ export function insertOnPage({title, author, publisher, publishedDate, pagesNumb
         createBook(bookData)
             .then((idBook) => {
                 console.log("book created has id: "+idBook)
-                createReading(idBook, localStorage.getItem("idUser"))
+                createReading(localStorage.getItem("idUser"), idBook)
                     .then((reading) => {
                         favoriteReading(reading.idBook, reading.idUser)
                     })
             })
             .catch((error) => {
-                console.error("Error creating book:", error);
+                console.error("Error creating book deu pani:", error);
             })
     });
 

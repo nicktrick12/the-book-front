@@ -56,3 +56,12 @@ button:hover{
     text-shadow: white;
     box-shadow: 0px 0px 5px white;
 }
+
+#error{
+    text-align: center;
+    color: #ff0000;
+    background-color: #ffbbbb;
+    padding: 10px;
+    border-radius: 4px;
+    display: none;
+}

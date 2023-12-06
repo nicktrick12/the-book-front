@@ -27,24 +27,31 @@ const url = "http://localhost:8080"
           "Content-Type": "application/json",
         },
       })
-        .then((response) => {
-          if (!response.ok) {
-            throw new Error(`HTTP error! Status: ${response.status}`);
-          }
-          return response.json();
-        })
-        .then((data) => {
-          if (data.id) {
-            localStorage.setItem("idUser", data.id)
-            console.log(localStorage.getItem("idUser"));
-          } else {
-            console.error("Registration response is missing user ID.");
-          }
-        })
-        .catch((error) => {
-          console.error("Registration error:", error);
-        });
+      .then((response) => {
+        if (!response.ok) {
+          alert("Preencha todos os campos");
+          throw new Error(`HTTP error! Status: ${response.status}`);
+          
+        }
+        location.href = "/";
+        return response.json();
+        
+      })
+      .then((data) => {
+        if (data.id) {
+          localStorage.setItem("idUser", data.id)
+          console.log(localStorage.getItem("idUser"));
+        } else {
+          console.error("Registration response is missing user ID.");
+        }
+      })
+      .catch((error) => {
+        console.error("Registration error:", error);
+      });
+  
     });
+    
   }
+
 
   document.addEventListener("DOMContentLoaded", handleRegistrationForm);
