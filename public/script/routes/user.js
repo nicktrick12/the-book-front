@@ -19,7 +19,7 @@ const url = "http://localhost:8080"
       });
 
       console.log("Registration Request Data:", formDataObject);
-
+     
       fetch(`${url}/register`, {
         method: "POST",
         body: JSON.stringify(formDataObject),
@@ -27,11 +27,16 @@ const url = "http://localhost:8080"
           "Content-Type": "application/json",
         },
       })
+  
       .then((response) => {
         if (!response.ok) {
+          if (response.status != 200){
+            alert ("Algo pode estar errado como o nome de usuario, email ou senha");
+            throw new Error(`HTTP error! Status: ${response.status}`);
+          }else{
           alert("Preencha todos os campos");
           throw new Error(`HTTP error! Status: ${response.status}`);
-          
+          }
         }
         location.href = "/";
         return response.json();

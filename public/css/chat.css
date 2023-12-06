@@ -6,17 +6,22 @@
     border-radius: 5px;
     padding: 10px;
     background: #F6D18D;
+    
 }
 
 .input-container {
     display: flex;
+    
 }
+
 .message-input {
     flex: 1;
     padding: 8px;
     border-radius: 5px 0 0 5px;
     border: 1px solid #ddd;
+    
 }
+
 .send-button {
     border-radius: 0 5px 5px 0;
     border: 1px solid #ddd;
@@ -25,6 +30,7 @@
     padding: 8px 16px;
     cursor: pointer;
 }
+
 .nada{
     top: 10px;
     position: relative;
@@ -36,10 +42,22 @@
 .message-container {
     height: 450px;
     left: 10px;
-    border-radius: 5px;
     overflow-y: scroll;
     margin-bottom: 10px;
-    padding: 10px;
+    flex-grow: 1;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 30px 30px ;
+    list-style-type: none;
+}
+
+.msg {
+    background-color: white;
+    width: 800px;
+    word-wrap: break-word;
+    height: fit-content;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
 }

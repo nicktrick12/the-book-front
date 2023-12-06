@@ -55,6 +55,32 @@ export function getComments(idChatroom) {
     })
 }
 
+export function loadComments(chatroomId) {
+    const messagesContainer = document.querySelector(".message-container");
+    messagesContainer.innerHTML = "";
+
+    getComments(chatroomId)
+    .then((comments) => {
+        let listOfComments = []
+
+        for (const comment of comments) {
+            const cardMessage = document.createElement('li');
+    
+            cardMessage.innerHTML = `
+                <div class="msg">
+                    <p>${comment.text}</p>
+                </div>
+            `;
+
+            listOfComments.push(comment);
+            messagesContainer.appendChild(cardMessage);
+        }
+        console.log(listOfComments)
+    }) 
+    .catch((error) => {
+        console.error("Error getting comments:", error);
+    });
+}
 
 document.addEventListener("DOMContentLoaded", function () {
     const chatroomId = getChatroomIdFromUrl();
@@ -71,42 +97,20 @@ document.addEventListener("DOMContentLoaded", function () {
         createComment(userId, chatroomId, commentText)
             .then((data) => {
                 console.log("Comment created successfully:", data);
-            
+                loadComments(chatroomId);
+                commentInput.value = "";
             })
             .catch((error) => {
                 console.error("Error creating comment:", error);
             });
+        
     });
+
+    loadComments(chatroomId)
+
 });
 
- let chatList = getComments(getChatroomIdFromUrl)
-chatList.then((comments) => {
-    const chat = document.getElementsByClassName("chat-container");
-
-    for (const comment of comments) {
-        const cardMessage = $('<li>');
-
-        cardMessage.html(`
-            <div class="msg">
-                <p>${comment.text}</p>
-            </div>
-        `);
-
-        chat.append(cardMessage);
-    }
-});
 
 
 const style = document.createElement('style');
-style.innerHTML = `
-    .msg {
-        background-color: white;
-        width: 800px;
-        word-wrap: break-word;
-        height: fit-content;
-        border-radius: 10px;
-        padding: 10px;
-    }
-`;
-
 document.head.appendChild(style);
