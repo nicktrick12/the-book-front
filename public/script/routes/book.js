@@ -26,3 +26,26 @@ export function createBook(bookData) {
     });
 }
 
+export function getBook(bookData){
+    return new Promise((resolve, reject) => {
+        fetch(`${url}/${}`, {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+            },
+        })
+        .then((response) => {
+            if (!response.ok) {
+                throw new Error(`Erro ao achar! Status: ${response.status}`);
+            }
+            return response.json();
+        })
+        .then((data) => {
+            resolve(data);
+        })
+        .catch((error) => {
+            console.error("Error finding chatroom:", error);
+            reject(error);
+        });
+    })
+}
