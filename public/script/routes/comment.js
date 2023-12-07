@@ -109,8 +109,3 @@ document.addEventListener("DOMContentLoaded", function () {
     loadComments(chatroomId)
 
 });
-
-
-
-const style = document.createElement('style');
-document.head.appendChild(style);

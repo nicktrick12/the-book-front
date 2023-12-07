@@ -40,7 +40,6 @@ const url = "http://localhost:8080"
         }
         location.href = "/";
         return response.json();
-        
       })
       .then((data) => {
         if (data.id) {
