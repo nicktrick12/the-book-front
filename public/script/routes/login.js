@@ -44,6 +44,8 @@ const url = "http://localhost:8080/api/v1/users/login"
 
   }
 
+
+
   document.addEventListener("DOMContentLoaded", handleLoginForm);
 
   document.addEventListener("DOMContentLoaded", handleRegistrationForm);

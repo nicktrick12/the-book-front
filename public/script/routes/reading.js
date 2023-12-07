@@ -1,3 +1,5 @@
+
+
 const url = "http://localhost:8080/api/v1/readings"
 
 export function createReading(idUser, idBook) {
@@ -76,6 +78,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const userId = localStorage.getItem("idUser");
     console.log(userId)
     
+    
     getFavorites(userId)
     .then((favorites) => {
         let listOfFavoritos = []
@@ -98,6 +101,12 @@ document.addEventListener("DOMContentLoaded", function () {
                 </li>
             `;
 
+            getBook(reading.idBook)
+                .then((books) => {
+                    console.log(JSON.stringify(books))
+    
+            })
+
             listOfFavoritos.push(reading);
             listaFavoritos.appendChild(cardFavorite);
         }
@@ -106,5 +115,7 @@ document.addEventListener("DOMContentLoaded", function () {
     .catch((error) => {
         console.error("Error getting favorites:", error);
     });
+
+    
 
 });
