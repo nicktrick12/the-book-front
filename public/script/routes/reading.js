@@ -1,5 +1,3 @@
-
-
 const url = "http://localhost:8080/api/v1/readings"
 
 export function createReading(idUser, idBook) {
@@ -91,7 +89,6 @@ document.addEventListener("DOMContentLoaded", function () {
     
             cardFavorite.innerHTML = `
                 <li class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-                
                     //fazer função getBook(idBook)
                     //getBook(reading.idBook)
                     //ai voce pega a resposta e ai sim tu coloca 

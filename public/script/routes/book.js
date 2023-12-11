@@ -28,7 +28,7 @@ export function createBook(bookData) {
 
 export function getBook(bookData){
     return new Promise((resolve, reject) => {
-        fetch(`${url}/${}`, {
+        fetch(`${url}/$`, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
@@ -48,4 +48,8 @@ export function getBook(bookData){
             reject(error);
         });
     })
+}
+
+export function getBook(bookId){
+    
 }
