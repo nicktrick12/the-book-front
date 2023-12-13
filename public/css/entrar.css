@@ -44,9 +44,15 @@ button{
     position: relative;
     top: -33px;
     left: 141px;
+    font-size: 30px;
 }
 
 label{
+    font-size: 30px;
+}
+
+a{
+    text-decoration: none;
     font-size: 30px;
 }
 

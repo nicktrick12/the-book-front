@@ -1,4 +1,6 @@
-const url = "http://localhost:8080/api/v1/readings"
+import { getBookById } from "./book.js";
+
+const url = "http://localhost:8080/api/v1/readings";
 
 export function createReading(idUser, idBook) {
     return new Promise((resolve, reject) => {
@@ -98,7 +100,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 </li>
             `;
 
-            getBook(reading.idBook)
+            getBookById(reading.idBook)
                 .then((books) => {
                     console.log(JSON.stringify(books))
     
