@@ -24,8 +24,7 @@ btn2.addEventListener('click', function(){
         btnd.style.display = 'none'
     } else{
         btnr.style.display = 'none';
-    }
-        
+    } 
 });
 
 btn3.addEventListener('click', function(){
@@ -37,6 +36,5 @@ btn3.addEventListener('click', function(){
     } else{
         btnd.style.display = 'none';
     }
-        
-        
 });
+
