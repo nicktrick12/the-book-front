@@ -74,11 +74,10 @@ export function getFavorites(userId) {
 
 document.addEventListener("DOMContentLoaded", function () {
 
-    const listaFavoritos = document.querySelector(".nav-item.dropdown");
+    const listaFavoritos = document.querySelector(".cf");
     const userId = localStorage.getItem("idUser");
     console.log(userId)
-    
-    
+
     getFavorites(userId)
     .then((favorites) => {
         let listOfFavoritos = []
@@ -86,28 +85,25 @@ document.addEventListener("DOMContentLoaded", function () {
         console.log(JSON.stringify(favorites))
 
         for (const reading of favorites) {
-            const cardFavorite = document.createElement('li');
-            console.log(JSON.stringify(reading))
-    
-            cardFavorite.innerHTML = `
-                <li class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-                    //fazer função getBook(idBook)
-                    //getBook(reading.idBook)
-                    //ai voce pega a resposta e ai sim tu coloca 
-                    //no cartão. assim:
-                    //$-{book.title}
-                ${reading.idBook}
-                </li>
-            `;
-
+            const cardFavorite = document.createElement('div');
+        
             getBookById(reading.idBook)
-                .then((books) => {
-                    console.log(JSON.stringify(books))
-    
-            })
-
-            listOfFavoritos.push(reading);
-            listaFavoritos.appendChild(cardFavorite);
+                .then((book) => {
+                    console.log(JSON.stringify(book));
+                    console.log(book.title);
+        
+                    // Adicione o título do livro ao elemento cardFavorite
+                    cardFavorite.textContent = book.title;
+        
+                    // Adicione a classe 'cd' ao elemento cardFavorite
+                    cardFavorite.classList.add('cfChild');
+        
+                    // Adicione cardFavorite à listaFavoritos
+                    listaFavoritos.appendChild(cardFavorite);
+                })
+                .catch((error) => {
+                    console.error("Error getting book:", error);
+                });
         }
         console.log(listOfFavoritos)
     }) 
