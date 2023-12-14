@@ -66,7 +66,7 @@ export function loadComments(chatroomId) {
         for (const comment of comments) {
             const cardMessage = document.createElement('li');
     
-            if (comment.idUser = localStorage)
+
             cardMessage.innerHTML = `
                 <div class="msg" style="background-color: white">
                     <p>${comment.text}</p>

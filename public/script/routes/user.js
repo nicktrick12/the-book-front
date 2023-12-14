@@ -9,13 +9,7 @@ const url = "http://localhost:8080"
       const formDataObject = {};
 
       formData.forEach((value, key) => {
-        if (key === "age") {
-          formDataObject[key] = parseInt(value, 10);
-        } else if (key === "cpf" && value === "") {
-          formDataObject[key] = null;
-        } else {
           formDataObject[key] = value;
-        }
       });
 
       console.log("Registration Request Data:", formDataObject);
