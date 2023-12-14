@@ -1,10 +1,19 @@
 const url = "http://localhost:8080/api/v1/users/login"
-
+  
   function handleLoginForm() {
     const loginForm = document.getElementById("login-form");
 
     loginForm.addEventListener("submit", function(e) {
       e.preventDefault();
+
+      const username = document.querySelector('#username').value;
+        const password = document.querySelector('#password').value;
+
+        if (username === "" || password === "") {
+            alert("Preencha todos os campos.");
+            return;
+        }
+
       const formData = new FormData(loginForm);
       const formDataObject = {};
 
@@ -20,10 +29,18 @@ const url = "http://localhost:8080/api/v1/users/login"
         body: JSON.stringify(formDataObject)
     })
 
+    
+
     .then((response) => {
         if (!response.ok) {
-           console.log( JSON.stringify(formDataObject))
+          if (response.status != 200 ){
+            alert ("Algo pode estar errado como o nome de usuario, email ou senha");
             throw new Error(`HTTP error! Status: ${response.status}`);
+          }else{
+          alert("Preencha todos os campos");
+          throw new Error(`HTTP error! Status: ${response.status}`);
+          }
+
         }
         location.href = "/";
         return response.json();
@@ -43,9 +60,4 @@ const url = "http://localhost:8080/api/v1/users/login"
     })
 
   }
-
-
-
   document.addEventListener("DOMContentLoaded", handleLoginForm);
-
-  document.addEventListener("DOMContentLoaded", handleRegistrationForm);

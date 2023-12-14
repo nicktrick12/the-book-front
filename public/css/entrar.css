@@ -24,7 +24,7 @@ body{
     position: relative;
     display: flex;
     left: 300px;
-    top: 130px;
+    top: 90px;
     color: #fff;
 }
 
@@ -36,15 +36,27 @@ button{
     border: #090E0D;
     background-color: #27312B;
     box-shadow: black 0px 0px 5px;
+    position: relative;
+    top: 26px;
+    right: -15px;
+}
+
+#enter{
+    position: relative;
+    top: -5px;
+    right: -4px;
+    color: white;
+    
 }
 
 #a{
     display: flex;
     color: white;
     position: relative;
-    top: -33px;
+    top: -20px;
     left: 141px;
     font-size: 30px;
+    text-decoration:underline;
 }
 
 label{
@@ -70,4 +82,13 @@ button:hover{
     padding: 10px;
     border-radius: 4px;
     display: none;
+}
+
+input{
+    color: white;
+    border-radius: 9px;
+    height: 46px;
+    width: 100%;
+    background-color: rgba(53, 10, 10, 0.093) ;
+    border-color:white;
 }

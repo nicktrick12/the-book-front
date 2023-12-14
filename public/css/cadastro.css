@@ -13,6 +13,11 @@ body{
     height: 100vh;
 }
 
+label{
+    font-size: 20px;
+
+}
+
 .container {
     display: flex;
     gap: 5rem;
@@ -62,7 +67,7 @@ h2{
 .form{
     position: relative;
     left: 620px;
-    top: -563px;
+    top: -503px;
     color: #fff;
     font-size: 13px;
     text-shadow: 
@@ -74,10 +79,11 @@ h2{
 
 button{
     position: absolute;
-    bottom: -510px;
-    left: 55px;
-    height: 40px; width:150px;
-    background-color: #704241;
+    bottom: -443px;
+    left: 50px;
+    height: 40px;
+    width:150px;
+    background-color: #275237;
     border-radius: 30px;
     border: black;
     color: rgb(235, 235, 235);
@@ -94,9 +100,9 @@ button id{
 input{
     color: white;
     border-radius: 9px;
-    height: 26px;
+    height: 46px;
     width: 100%;
-    background-color: rgba(43, 15, 15, 0.44) ;
+    background-color: rgba(53, 10, 10, 0.093) ;
 }
 
 button:hover{
@@ -116,7 +122,7 @@ input:hover{
     color: white;
     position: relative;
     left: 230px;
-    top: 8px;
+    top: 28px;
 }
 
 #login:hover{

@@ -5,6 +5,17 @@ const url = "http://localhost:8080"
 
     registrationForm.addEventListener("submit", function (e) {
       e.preventDefault();
+
+      const name = document.querySelector('#name').value;
+      const username = document.querySelector('#username').value;
+      const password = document.querySelector('#password').value;
+      const email = document.querySelector('#email').value;
+
+        if (username === "" || password === "" || email === "" || name === "") {
+            alert("Preencha todos os campos.");
+            return;
+        }
+
       const formData = new FormData(registrationForm);
       const formDataObject = {};
 
@@ -50,6 +61,4 @@ const url = "http://localhost:8080"
     });
     
   }
-
-
   document.addEventListener("DOMContentLoaded", handleRegistrationForm);
