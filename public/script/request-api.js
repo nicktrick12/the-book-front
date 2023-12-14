@@ -18,7 +18,8 @@ export async function search(bookNameForApi){
 }
 window.onload  = ()=>{
     
+    
      
-    search('terror')
+    search('a')
 }
 
