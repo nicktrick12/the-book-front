@@ -48,9 +48,33 @@ export function favoriteReading(idBook, idUser) {
     });
 }
 
-export function getFavorites(userId) {
+export function getReadings(userId) {
     return new Promise((resolve, reject) => {
         fetch(`${url}/users/${userId}`, {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+            },
+        })
+        .then((response) => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            return response.json();
+        })
+        .then((data) => {
+            resolve(data);
+        })
+        .catch((error) => {
+            console.error("Error getting favorites:", error);
+            reject(error);
+        });
+    })
+}
+
+export function getFavorites(userId) {
+    return new Promise((resolve, reject) => {
+        fetch(`${url}/favorites/users/${userId}`, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
@@ -109,8 +133,47 @@ document.addEventListener("DOMContentLoaded", function () {
     }) 
     .catch((error) => {
         console.error("Error getting favorites:", error);
-    });
+    }); 
 
-    
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const listReading= document.querySelector(".cr");
+    const userId = localStorage.getItem("idUser");
+    console.log(userId)
+
+    getReadings(userId)
+    .then((readings) => {
+        let listOfReading = []
+
+        console.log(JSON.stringify(readings))
+
+        for (const reading of readings) {
+            const cardReading = document.createElement('div');
+        
+            getBookById(reading.idBook)
+                .then((book) => {
+                    console.log(JSON.stringify(book));
+                    console.log(book.title);
+        
+                    // Adicione o título do livro ao elemento cardFavorite
+                    cardReading.textContent = book.title;
+        
+                    // Adicione a classe 'cd' ao elemento cardFavorite
+                    cardReading.classList.add('crChild');
+        
+                    // Adicione cardFavorite à listaFavoritos
+                    listReading.appendChild(cardReading);
+                })
+                .catch((error) => {
+                    console.error("Error getting book:", error);
+                });
+        }
+        console.log(listOfReading)
+    }) 
+    .catch((error) => {
+        console.error("Error getting readings:", error);
+    }); 
 
 });

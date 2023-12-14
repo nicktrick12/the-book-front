@@ -119,7 +119,7 @@ body{
 }
 .cfChild{
     position: relative;
-    top: -18px;
+    top: 1px;
     right: 66px;
     margin: 10px;
     width: 150%;
@@ -135,8 +135,16 @@ body{
     height: 100%;
     background-color: #cddbd637;
     border-radius: 30px;
-
 }
+.crChild{
+    position: relative;
+    top: -18px;
+    right: 66px;
+    margin: 10px;
+    width: 150%;
+    height: 100%;
+}
+
 
 .cd{
     position: relative;
@@ -147,10 +155,4 @@ body{
     height: 100%;
     background-color: #cddbd637;
     border-radius: 30px;
-}
-
-
-hr{
-    position: relative;
-    top: -17px;
 }
