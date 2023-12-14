@@ -65,18 +65,42 @@ export function loadComments(chatroomId) {
 
         for (const comment of comments) {
             const cardMessage = document.createElement('li');
-    
-            if (comment.idUser = localStorage)
-            cardMessage.innerHTML = `
-                <div class="msg" style="background-color: white">
+
+            console.log(comment.idUser +"  "+localStorage+ "  Aqui")
+
+            if (comment.idUser == localStorage.idUser){
+                cardMessage.innerHTML = `
+                <div class="msg" style="background-color: green">
+                    <h3>${comment.idUser}</h3>
                     <p>${comment.text}</p>
                 </div>
-            `;
+                `
+            
+            } else{
 
+                cardMessage.innerHTML = `
+                <div class="msg" style="background-color: White">
+                    <p>${comment.text}</p>
+                </div>
+                `
+
+
+            }
+                console.log("Usuario " + comment.idUser+ " Mensagem "+ comment.text)
+                console.log(localStorage.idUser+" oljaha")
+                console.log(user);
+
+            
+            
+            
+
+            
             listOfComments.push(comment);
             messagesContainer.appendChild(cardMessage);
+            console.log(listOfComments.idUser);
+            console.log("aquiii");
         }
-        console.log(listOfComments)
+        console.log(listOfComments);
     }) 
     .catch((error) => {
         console.error("Error getting comments:", error);
