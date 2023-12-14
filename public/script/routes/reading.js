@@ -141,11 +141,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const listReading= document.querySelector(".cr");
     const userId = localStorage.getItem("idUser");
-    console.log(userId)
 
     getReadings(userId)
     .then((readings) => {
-        let listOfReading = []
 
         console.log(JSON.stringify(readings))
 
@@ -170,7 +168,6 @@ document.addEventListener("DOMContentLoaded", function () {
                     console.error("Error getting book:", error);
                 });
         }
-        console.log(listOfReading)
     }) 
     .catch((error) => {
         console.error("Error getting readings:", error);
