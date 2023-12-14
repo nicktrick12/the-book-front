@@ -1,25 +1,32 @@
 
 .chat-container {
-    width: 1000px;
-    height: 520px;
+    width: 150vh;
+    height: 90vh;
     border: 1px solid #ffffff;
     border-radius: 5px;
     padding: 10px;
-    background: #F6D18D;
-    
+    background-image: url(../img/book.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 180vh;
 }
+
+
 
 .input-container {
     display: flex;
-    
+    position: absolute;
+    top: 83vh;
+    width: 148vh;
 }
 
 .message-input {
     flex: 1;
-    padding: 8px;
+    padding: 18px;
     border-radius: 5px 0 0 5px;
     border: 1px solid #ddd;
-    
+    position: static;
+    top: -10px;
 }
 
 .send-button {
@@ -27,20 +34,22 @@
     border: 1px solid #ddd;
     background-color: #4CAF50;
     color: white;
-    padding: 8px 16px;
+    padding: 8px 26px;
     cursor: pointer;
+    position: relative;
+    top: 0,5px;
 }
 
 .nada{
     top: 10px;
     position: relative;
-    right: -150px;
+    right: -170px;
     border-radius: 13px;
     padding-left: 100px;
 }
 
 .message-container {
-    height: 450px;
+    height: 790px;
     left: 10px;
     overflow-y: scroll;
     margin-bottom: 10px;
@@ -52,10 +61,11 @@
 }
 
 .msg {
-    width: 800px;
+    width: 1000px;
     word-wrap: break-word;
     height: fit-content;
     border-radius: 10px;
     margin-bottom: 10px;
     padding: 10px;
+    
 }

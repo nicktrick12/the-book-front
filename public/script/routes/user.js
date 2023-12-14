@@ -11,7 +11,7 @@ const url = "http://localhost:8080"
       const password = document.querySelector('#password').value;
       const email = document.querySelector('#email').value;
 
-        if (username === "" || password === "" || email === "" || name === "") {
+        if (username === "" || password === "" || email ==="" || name ==="") {
             alert("Preencha todos os campos.");
             return;
         }

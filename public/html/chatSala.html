@@ -11,16 +11,12 @@
     <link rel="stylesheet" href="../css/chat.css">
 </head>
 
-<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #FFCD29;">
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #2A0A44;">
     <div class="container-fluid">
-      <div class="collapse navbar-collapse" id="navbarScroll" style="background-color: #FFCD29;  color: aliceblue;">
+      <div class="collapse navbar-collapse" id="navbarScroll" style="background-color: #2A0A44;  color: aliceblue;">
         <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="height: 50px; ">
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="/" style="color: aliceblue;">Home</a>
-          </li>
-          
-          <li class="nav-item">
-            <a class="nav-link" href="#" style="color: aliceblue;">Dúvidas</a>
           </li>
         </ul>
         <form class="d-flex">
@@ -42,7 +38,6 @@
     <div class="chat-container">
      
       <ul class="message-container"></ul>
-
         <div class="input-container">
           <input type="text" class="message-input" placeholder="Digite sua mensagem aqui...">
             <button type="submit" class="send-button">
@@ -53,7 +48,6 @@
   </div>
 
   <script>
-    // Script para rolar a barra de rolagem para o final
     document.addEventListener("DOMContentLoaded", function() {
       var messageContainer = document.getElementById("message-container");
       messageContainer.scrollTop = messageContainer.scrollHeight;
