@@ -13,6 +13,8 @@ input.keypress((e) => {
     }
 })
 
+console.log(localStorage.getItem("idUser"));
+
 btn.click((e) => {
     e.preventDefault()
     animateMain();

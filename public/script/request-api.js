@@ -10,16 +10,19 @@ export async function search(bookNameForApi){
        if (response.status != 200) throw "was not possible to search";
        const json = await response.json();
        if (json.items === undefined) throw "there are no books";
-       catchBookInfos(json.items); 
+       catchBookInfos(json.items);
    } catch(error) {
        loadingIcon.removeClass("active");
        errorOnPage(error);
    }
 }
-window.onload  = ()=>{
-    
-    
-     
-    search('a')
+window.onload = () => {
+    const themeList = ['horror', 'romance', 'comedy', 'fantasy', 'kids', 'manga', 'hero'];
+
+    let randomIndex = Math.floor(Math.random() * themeList.length);
+
+    let randomTopico = themeList[randomIndex];
+
+    search(randomTopico);
 }
 
